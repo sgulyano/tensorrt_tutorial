@@ -1,0 +1,16 @@
+
+image_classification/\.ipynb_checkpoints/
+
+image_classification/__pycache__/
+
+image_classification/data/
+
+*.gz
+
+image_classification/mobilev2_saved_model/
+
+image_classification/mobilev2_saved_model_TFTRT_FP16/
+
+image_classification/mobilev2_saved_model_TFTRT_FP32/
+
+image_classification/tf22_model/
