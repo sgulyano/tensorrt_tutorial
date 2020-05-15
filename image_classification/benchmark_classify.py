@@ -64,7 +64,7 @@ for i in range(4):
     x = tf.constant(x)
     
     labeling = infer(x)
-    preds = labeling['Logits'].numpy()
+    preds = labeling['predictions'].numpy()
     
     print('{} - Predicted: {}'.format(img_path, decode_predictions(preds, top=3)[0]))
 
@@ -79,7 +79,7 @@ for i in range(4):
     x = tf.constant(x)
     
     labeling = infer(x)
-    preds = labeling['Logits'].numpy()
+    preds = labeling['predictions'].numpy()
     
     print('{} - Predicted: {}'.format(img_path, decode_predictions(preds, top=3)[0]))
 

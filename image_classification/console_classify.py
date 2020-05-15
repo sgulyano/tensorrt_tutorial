@@ -29,7 +29,7 @@ def inference(img, infer):
     x = preprocess_input(x)
     x = tf.constant(x)
     labeling = infer(x)
-    return labeling['Logits'].numpy()
+    return labeling['predictions'].numpy()
 
 
 if __name__=='__main__':
@@ -45,13 +45,6 @@ if __name__=='__main__':
     ##
     print('Read image')
     img = read_img(img_path)
-    # img = cv2.imread(img_path)
-    # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-    # img = cv2.resize(img, (224, 224))
-
-    cv2.imshow('image',img.astype('uint8'))
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
 
     ##
     print('Load Model')
@@ -75,3 +68,7 @@ if __name__=='__main__':
     print('Inference')
     preds_keras = inference(img_keras, infer)
     print('Predicted Keras: ', decode_predictions(preds_keras, top=3)[0])
+
+    cv2.imshow('image',img.astype('uint8'))
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
